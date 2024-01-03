@@ -4,6 +4,9 @@ pipeline{
         jdk 'java17'
         terraform 'terraform'
     }
+    environment {
+        SCANNER_HOME=TOOL 'sonar-scanner'
+    }
     stages{
         stage('clean Workspace'){
             steps{
