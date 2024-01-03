@@ -32,8 +32,8 @@ resource "aws_s3_bucket_public_access_block" "mybucket-pab" {
 
 resource "aws_s3_bucket_acl" "mybucket-acl" {
   depends_on = [
-    aws_s3_bucket_ownership_controls.example,
-    aws_s3_bucket_public_access_block.example,
+    aws_s3_bucket_ownership_controls.mybucket-own-contr,
+    aws_s3_bucket_public_access_block.mybucket-pab,
   ]
 
   bucket = aws_s3_bucket.mybucket.id
@@ -82,5 +82,5 @@ resource "aws_s3_bucket_website_configuration" "website" {
     key = "error.html"
   }
 
-  depends_on = [ aws_s3_bucket_acl.mybucket-acl.id ]
+  depends_on = [ aws_s3_bucket_acl.mybucket-acl]
 }
