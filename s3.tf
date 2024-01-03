@@ -1,11 +1,13 @@
 #create s3 bucket
 resource "aws_s3_bucket" "mybucket" {
   bucket = var.bucket_name
-  versioning {
-    enabled = true
-  }
-  acl = var.acl
 }
+
+resource "aws_s3_bucket_versioning" "versioning_example" {
+  bucket = aws_s3_bucket.example.id
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
