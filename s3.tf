@@ -1,11 +1,14 @@
 #create s3 bucket
 resource "aws_s3_bucket" "mybucket" {
   bucket = var.bucket_name
+<<<<<<< HEAD
   versioning {
     enabled = true
   }
   acl = var.acl
 }
+=======
+>>>>>>> 772ff5e435090d5ae97af04f965ec39ced7a00dd
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
