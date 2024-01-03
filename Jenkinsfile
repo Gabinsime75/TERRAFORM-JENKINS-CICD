@@ -1,3 +1,4 @@
+def action = 'apply' // or 'destroy' based on conditions
 pipeline{
     agent any
     tools{
