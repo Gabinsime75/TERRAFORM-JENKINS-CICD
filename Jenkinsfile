@@ -3,9 +3,10 @@ pipeline{
     tools{
         jdk 'java17'
         terraform 'terraform'
+
     }
     environment {
-        SCANNER_HOME=TOOL 'sonar-scanner'
+        SCANNER_HOME = tool 'sonar-scanner'
     }
     stages{
         stage('clean Workspace'){
@@ -60,7 +61,7 @@ pipeline{
         }
         stage('Terraform apply'){
             steps{
-                sh 'terraform ${action} --auto approve'
+                sh "terraform ${action} --auto approve"
             }
         }
     }
