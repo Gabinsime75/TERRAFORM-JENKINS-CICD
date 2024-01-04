@@ -25,3 +25,9 @@ variable "acl" {
   type        = string
   default     = "private"
 }
+
+variable "subnet_id" {
+description = "subnet for ec2"  
+type        = string
+default     = "subnet-00c4c233b6d4b4a67"
+}
