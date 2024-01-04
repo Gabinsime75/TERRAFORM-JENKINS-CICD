@@ -3,6 +3,7 @@ resource "aws_instance" "Ajay" {
   instance_type          = var.instance_type
   key_name               = var.key_name
   subnet_id              = var.subnet_id
+  associate_public_ip_address = true
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
   user_data              = base64encode(file("website.sh"))
   tags = {
