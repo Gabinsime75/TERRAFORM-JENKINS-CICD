@@ -28,6 +28,11 @@ variable "acl" {
 
 variable "subnet_id" {
 description = "subnet for ec2"  
-type        = string
-default     = "subnet-00c4c233b6d4b4a67"
+  type        = string
+  default     = "subnet-00c4c233b6d4b4a67"
+}
+
+variable "vpc_id" {
+  type = string
+  default = "vpc-07ffaafdeb3ae3740"
 }
